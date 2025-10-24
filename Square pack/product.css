@@ -1,0 +1,131 @@
+/* Basic Reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Inter', sans-serif; background: #f6f2ee; color: #222; }
+
+/* HEADER */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.product-header .logo img {
+  height: 80px;
+}
+
+.product-nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  margin-left: 30px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.product-nav a:hover,
+.product-nav a.active {
+  background: #ff9e2c33;
+  color: #364f61;
+  transform: scale(1.1);
+}
+
+/* PAGE TITLE */
+.page-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  margin: 60px 0 40px 0;
+  color: #222;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+  gap: 40px;
+  padding: 0 50px 80px 50px;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PRODUCT CARD */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 360px; /* bigger size */
+}
+
+.product-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+/* PRODUCT INFO OVERLAY */
+.product-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(54, 95, 97, 0.95);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  transition: bottom 0.3s ease;
+  border-radius: 0 0 16px 16px;
+}
+
+.product-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Hover effect: info slides up */
+.product-card:hover .product-info {
+  bottom: 0;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+.product-footer {
+  background: #fff;
+  text-align: center;
+  padding: 40px;
+  color: #555;
+  font-size: 1rem;
+}
