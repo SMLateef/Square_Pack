@@ -1,0 +1,252 @@
+/* Basic Reset */
+* { box-sizing: border-box; margin:0; padding:0; }
+body { font-family: 'Inter', sans-serif; background: #f6f2ee; color: #222; }
+
+/* HEADER */
+.product-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.product-header .logo img {
+  height: 80px;
+}
+
+.product-nav a {
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  margin-left: 30px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.product-nav a:hover,
+.product-nav a.active {
+  background: #ff9e2c33;
+  color: #364f61;
+  transform: scale(1.1);
+}
+
+/* PAGE TITLE */
+.page-title {
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  margin: 60px 0 40px 0;
+  color: #222;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 products per row */
+  gap: 40px;
+  padding: 0 50px 80px 50px;
+}
+
+@media (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* PRODUCT CARD */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 360px; /* bigger size */
+}
+
+.product-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0,0,0,0.18);
+}
+
+/* PRODUCT INFO OVERLAY */
+.product-info {
+  position: absolute;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: rgba(54, 95, 97, 0.95);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  transition: bottom 0.3s ease;
+  border-radius: 0 0 16px 16px;
+}
+
+.product-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+.product-info p {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Hover effect: info slides up */
+.product-card:hover .product-info {
+  bottom: 0;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+/* ---- Contact ---- */
+
+/* ---------------------- FOOTER ---------------------- */
+/* ===== FOOTER SECTION ===== */
+.footer {
+  background-color: #f7f4ef; /* soft cream tone */
+  padding: 60px 10%;
+  color: #333;
+  font-family: 'Poppins', sans-serif;
+  border-top: 1px solid #e0dcd4;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.footer-about h3 {
+  font-size: 1.6rem;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.footer-about p {
+  line-height: 1.6;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ---- Quick Links ---- */
+.footer-links h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #444;
+  font-size: 0.95rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #c59a5d; /* gold accent */
+  transform: translateX(3px);
+}
+
+/* ---- Social Links ---- */
+.footer-social h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.social-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #444;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.social-icons a i {
+  font-size: 1.1rem;
+  color: #c59a5d;
+  transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #c59a5d;
+  transform: translateX(4px);
+}
+
+.social-icons a:hover i {
+  transform: scale(1.2);
+}
+
+.footer-contact h4 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.footer-contact p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.footer-contact a {
+  color: #444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+  color: #c59a5d;
+}
+
+/* ---- Bottom Bar ---- */
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #e0dcd4;
+  font-size: 0.9rem;
+  color: #777;
+}
